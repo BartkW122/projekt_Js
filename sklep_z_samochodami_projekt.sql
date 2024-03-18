@@ -24,44 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `kupujacy`
---
-
-CREATE TABLE `kupujacy` (
-  `id` int(11) NOT NULL,
-  `imie` varchar(25) DEFAULT NULL,
-  `nazwisko` varchar(25) DEFAULT NULL,
-  `numer_telefonu` int(11) DEFAULT NULL,
-  `miejscowosc` varchar(35) DEFAULT NULL,
-  `Addres` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `ogloszenia`
 --
 
 CREATE TABLE `ogloszenia` (
   `id` int(11) NOT NULL,
   `rok_produkcji` varchar(15) DEFAULT NULL,
-  `marka` varchar(25) DEFAULT NULL,
-  `model` varchar(25) DEFAULT NULL,
+  `marka_id` int(25) DEFAULT NULL,
+  `model_id` int(25) DEFAULT NULL,
   `pojemnosc_baku` int(11) DEFAULT NULL,
   `typ_samochodu_id` int(11) DEFAULT NULL,
   `typ_napedu_id` int(11) DEFAULT NULL,
-  `sprzedawca_id` int(11) DEFAULT NULL,
-  `kupujacy_id` int(11) DEFAULT NULL,
+  `uzytkownik_id` int(11) DEFAULT NULL,
   `stan` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `sprzedawca`
+-- Struktura tabeli dla tabeli `uzytkownik`
 --
 
-CREATE TABLE `sprzedawca` (
+CREATE TABLE `uzytkownik` (
   `id` int(11) NOT NULL,
   `imie` varchar(25) DEFAULT NULL,
   `nazwisko` varchar(25) DEFAULT NULL,
@@ -88,6 +72,30 @@ CREATE TABLE `typ_napedu` (
 --
 
 CREATE TABLE `typ_samochodu` (
+  `id` int(11) NOT NULL,
+  `nazwa` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+COMMIT;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `marka`
+--
+
+CREATE TABLE `marka` (
+  `id` int(11) NOT NULL,
+  `nazwa` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+COMMIT;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `model`
+--
+
+CREATE TABLE `model` (
   `id` int(11) NOT NULL,
   `nazwa` varchar(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
