@@ -152,8 +152,8 @@ CREATE TABLE `uzytkownik` (
   `imie` varchar(25) NOT NULL,
   `nazwisko` varchar(25) NOT NULL,
   `numer_telefonu` int(11) NOT NULL,
-  `haslo` varchar(35) DEFAULT NULL,
-  `email` varchar(60) DEFAULT NULL,
+  `haslo` varchar(35) NOT NULL,
+  `email` varchar(60) NOT NULL,
   `miejscowosc` varchar(35) NOT NULL,
   `Addres` varchar(25) NOT NULL,
   `typ_uzytkownika_id` int(11) NOT NULL
